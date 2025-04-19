@@ -1,7 +1,6 @@
 hs = hs
 hs.loadSpoon("AClock")
 
-
 -- reload configs
 hs.hotkey.bind({"cmd", "alt"}, "R", function()
 	  hs.reload()
@@ -9,7 +8,9 @@ hs.hotkey.bind({"cmd", "alt"}, "R", function()
   hs.alert.show("Config loaded")
 
 -- Defeating paste blocking
-hs.hotkey.bind({"cmd", "alt"}, "V", function() hs.eventtap.keyStrokes(hs.pasteboard.getContents()) end)
+hs.hotkey.bind({"cmd", "alt"}, "V", function()
+    hs.eventtap.keyStrokes(hs.pasteboard.getContents()) 
+end)
 
 hs.hotkey.bind({"alt", "cmd"}, "1", function()
 	hs.application.launchOrFocus("Warp")
