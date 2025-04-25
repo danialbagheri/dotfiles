@@ -87,3 +87,18 @@ end)
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+
+-- lsp remap
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Show references" })
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover info" })
+vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Show signature help" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+
+
+-- comment remap
+vim.keymap.set("v", "<leader>/", function()
+  require("Comment.api").toggle.linewise(vim.fn.visualmode())
+end, { desc = "Toggle comment in visual mode" })

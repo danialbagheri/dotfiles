@@ -1,0 +1,14 @@
+
+
+
+
+[[ssh-keys]]
+vault = "Tech Team"
+
+[[ssh-keys]]
+item = "bastion production (eks)"
+vault = "Employee"
+
+[[ssh-keys]]
+item = "bastion production (eks)"
+vault = "Tech Team"
