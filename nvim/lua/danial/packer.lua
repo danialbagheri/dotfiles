@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
 
   -- nvim-treesitter
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use 'nvim-treesitter/nvim-treesitter-context'
 
   -- harpoon 
   use 'ThePrimeagen/harpoon'
@@ -43,6 +44,7 @@ return require('packer').startup(function(use)
   }
   use 'github/copilot.vim'
   use 'mfussenegger/nvim-lint'
+  use 'lewis6991/gitsigns.nvim'
   use {
       "nvim-tree/nvim-web-devicons",
       config = function()
@@ -60,4 +62,7 @@ return require('packer').startup(function(use)
           "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
       },
   })
+
+  use 'APZelos/blamer.nvim'
+
 end)

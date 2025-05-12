@@ -12,8 +12,14 @@ hs.alert.show("Config loaded")
 -- hs.hotkey.bind(hyper, "V", function()
 --     hs.eventtap.keyStrokes(hs.pasteboard.getContents()) 
 -- end)
---
 
+
+-- switching between windows
+hs.hotkey.bind(hyper, 'm', function()
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  win:move(win:frame():toUnitRect(screen:frame()), screen:next(), true, 0)
+end)
 
 -- this function doesn't work on mac. issue is visibleWindows() or mainWindo() are coming back null on certain apps
 function launchOrMoveToScreen(appName)

@@ -2,6 +2,10 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- jump to beginning of line & end of line unix way
+vim.keymap.set("n", "<C-e>", "$")
+vim.keymap.set("n", "<C-a>", "^")
+
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -102,3 +106,17 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action
 vim.keymap.set("v", "<leader>/", function()
   require("Comment.api").toggle.linewise(vim.fn.visualmode())
 end, { desc = "Toggle comment in visual mode" })
+
+
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+

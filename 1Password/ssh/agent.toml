@@ -10,5 +10,9 @@ item = "bastion production (eks)"
 vault = "Employee"
 
 [[ssh-keys]]
+item = "id_openssh"
+vault = "Employee"
+
+[[ssh-keys]]
 item = "bastion production (eks)"
 vault = "Tech Team"
