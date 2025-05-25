@@ -1,4 +1,6 @@
 packer-compiled.lua
+nvim/plugin/*
+tmux/plugins/*
 .DS_Store
 tt.*
 .tests

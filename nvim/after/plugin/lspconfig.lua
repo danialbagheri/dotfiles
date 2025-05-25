@@ -1,6 +1,4 @@
 require('lspconfig').ts_ls.setup{}  -- for TypeScript/JavaScript
--- require('lspconfig').pyright.setup{}   -- for Python
--- require('lspconfig').lua_ls.setup{}    -- for Lua
 
 vim.lsp.config['luals'] = {
   -- Command and arguments to start the server.

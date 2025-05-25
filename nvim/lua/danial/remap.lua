@@ -6,6 +6,12 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<C-e>", "$")
 vim.keymap.set("n", "<C-a>", "^")
 
+-- mapping alt + arrow keys to move between words
+vim.keymap.set('n', '<Esc>[1;3C', 'w', { noremap = true })
+vim.keymap.set('n', '<Esc>[1;3D', 'b', { noremap = true })
+vim.keymap.set('i', '<Esc>[1;3C', '<C-o>w', { noremap = true })
+vim.keymap.set('i', '<Esc>[1;3D', '<C-o>b', { noremap = true })
+
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

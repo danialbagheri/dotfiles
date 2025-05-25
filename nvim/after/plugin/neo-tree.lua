@@ -1,9 +1,19 @@
 -- Key mapping for opening Neo-tree with \
-vim.keymap.set('n', '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal', silent = true })
-vim.cmd[[
-  autocmd VimEnter * silent! execute 'Neotree reveal' 
-  autocmd VimEnter * wincmd p
-]]
+-- vim.keymap.set('n', '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal', silent = true })
+-- vim.cmd[[
+--   autocmd VimEnter * silent! execute 'Neotree reveal' 
+--   autocmd VimEnter * wincmd p
+-- ]]
+
+vim.keymap.set('n', '\\', function()
+  local buf_ft = vim.bo.filetype
+  if buf_ft == "neo-tree" then
+    vim.cmd("Neotree close")
+  else
+    vim.cmd("Neotree reveal")
+  end
+end, { desc = "Toggle NeoTree smartly", silent = true })
+
 
 require("neo-tree").setup({
     close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
@@ -310,3 +320,9 @@ require("neo-tree").setup({
     }
 })
 
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("Neotree close")
+  end,
+})

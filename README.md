@@ -22,6 +22,27 @@ Firtly make a link to the config files
 ```bash
 ln -s ~/dev-dotfiles/nvim ~/.configs/
 ```
+
+### Telescope
+
+Telescrope is a fuzzy finder. I have got below keymapings for it.
+
+1 - Advance search
+
+`leader` + `as` opens the advance search, this will search inside the files and we can pass flags to it to only search certain file types. this uses `use_grep_args` to search the files.
+
+example searches:
+
+`"search term" -tpy src` will search in all python files in src folder
+
+2 - Search in files
+
+We have `leader` + `pf` (project find) to search with in the project
+
+3 - Search in current gitfiles
+
+`ctrl` + `p` similar to vscode to search in the current git files.
+
 ## zsh profile 
 
 some zsh useful configs
